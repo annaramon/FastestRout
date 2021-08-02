@@ -48,13 +48,11 @@ Now, the user can look for the bot in Telegram and start using it sending the **
 
 ## **EXECUTING THE BOT**
 ***
-At this point, the bot.py program has been executed in the shell and the user has found his bot in the Telegram app. From now on, we wil never get lost! The bot goal is to guide us from a point to another. To start a conversation with the bot and finding out their functions just send him the message */help*. The bot will answer you sending the functions that he can execute, how to execute them and a brief explanation of each one. 
+At this point, the bot.py program has been executed in the shell and the user has found his bot in the Telegram app. From now on, we wil never get lost! The bot goal is to guide us from a point to another. To start a conversation with the bot and finding out their functions just send him the message */help*. The bot will answer you sending the functions that he can execute, how to execute them and a brief explanation of each one.
 
-<center>
-![Alt text](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/help.png)
-![Bot's chat](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/help.png){width=20%} 
-![Bot's chat](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/help2.png){width=40%}
-<center>
+
+<img src="https://user-images.githubusercontent.com/88190336/127868001-218acbbf-f53f-4658-8556-c3f3a932445b.png" width=200 >
+
 
 _**AnnaRamonHinojosa** is an example of one Telegram bot_
 
@@ -66,14 +64,14 @@ In this section you will understand how work each program independently and its 
 
 ### Igo.py
 The module igo.py contains the code related with getting, keeping and consulting information of the Barcelona street's graphs, of its trams and the traffic in each one. This module is able to calculate the shortest path between two points taking into account the length of Barcelona's streets as well as their maximum speed and traffic congestion in each moment. A part of calculating the shortest path between two points, igo.py shows an image of a map with the shortest path calculated, painted on it. 
-For downloading the graph and using it we use this private functions, which the name explains exactly what they do: \
+For downloading the graph and using it we use this private functions, which the name explains exactly what they do: 
 - _get_graph_ 
 - _exists_graph_ 
 - _download_graph_ 
 - _save_graph_ 
 - _load_graph_ 
 
-For finding the shortest path taking into account the items explained before, we create a new concept _itime_. \
+For finding the shortest path taking into account the items explained before, we create a new concept _itime_. 
 
 
 `ITIME`
@@ -88,8 +86,7 @@ Itime is an attribute that we decided to create and add to each edge of the Barc
 When we don't have information of a tram, we assign an hypothetical congestion based on the type of tram that it is. All the edges in the graph have an attribute named _highway_ which says the tram type. In the function **_calcular_congestio_** you can observe the procedure followed: a primary tram is considered to be _molt fluid_ because it has a fast maximum speed and more than one lane, a residential street is considered to be _dens_. So we assign a congestion depending on the tram's type. Another possibility is that the maximum speed of the tram is undetermined, then we assign an hypothetical one following the same procedure as in congestions (function **_calcular_speed_**).
 The lower the itime is, the fastest is the tram. 
 
-
-![**_plot_congestions_** output](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/attributes.png){width=100%} 
+![attributes](https://user-images.githubusercontent.com/88190336/127867846-b263263d-5154-4a9b-bad8-12a52b664836.png) 
 
 yellow: highway type - green: length - blue: maxspeed. Those are ones of the original graph attributes that the program uses for calculating the itime. It's an example that in some trams there's no maxspeed attribute.
 
@@ -101,13 +98,11 @@ In the function **_get_igraph_** we get the graph with the attribute itime updat
 
 We know that the possibility of changing the speed of a tram without congestion information exists and would modify its itime, nevertheless, the change of speed would be minimum, so the itime would change insignificantly compared to the time efficiency that we win by downloading the graph once and just updating the itimes with congestion information.
 
-The plot functions are helpers which allows making some experiments and proving if the highways download properly, or the congestions... The plots shows an image of the highways ( **_plot_hihghways_** ), of the congestions painted on a map image with different colors depending on the congestion level ( **_plot_congestions_** ), of a given path ( **_plot_path_** ).  \
-Finally, the main function is **_shortest_path_** which calculates the shortest path between two points taking into account the **itime** attribute. **_star_system_** function downloads the graph if it has not been saved yet. \
+The plot functions are helpers which allows making some experiments and proving if the highways download properly, or the congestions... The plots shows an image of the highways ( **_plot_hihghways_** ), of the congestions painted on a map image with different colors depending on the congestion level ( **_plot_congestions_** ), of a given path ( **_plot_path_** ).  
+Finally, the main function is **_shortest_path_** which calculates the shortest path between two points taking into account the **itime** attribute. **_star_system_** function downloads the graph if it has not been saved yet. 
 
+<img src="https://user-images.githubusercontent.com/88190336/127869121-d8925b9c-f613-4077-9b90-2dc3a86ae3e0.png" width=300 >
 
-<center>
-![**_plot_congestions_** output](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/congestions2.png){width=30%} 
-<center>
 **_plot_congestions_** output
 
 
@@ -125,20 +120,20 @@ If the users wants to know his location, the function **_where_** sends an image
 
 - `start and where`
 <center>
-![**start and where**](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/start_where.PNG){width=30%}  \
+<img src="https://user-images.githubusercontent.com/88190336/127869630-aa1a2f75-b4b1-4efc-a9f0-65795565aa4c.PNG" width=200 >
 <center>
 
 - `pos and go` 
 
 <center>
-![**_plot_congestions_** output](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/pos.PNG){width=30%} 
+<img src="https://user-images.githubusercontent.com/88190336/127870013-2682dc88-cdd3-4b02-9cfa-2e8b9d40bf9d.PNG" width=200 > 
 <center>
 <center>
 
 - `unpos` 
 
 <center>
-![**_plot_congestions_** output](/Users/HP/OneDrive/Escritorio/ANNA/UPC/Q2/AP2/PRACTICA2/unpos.PNG){width=30%}
+<img src="https://user-images.githubusercontent.com/88190336/127870500-b7405f36-47fe-4dbb-aa6c-f2be3bc644d3.PNG" width=200 > 
 <center>
 Stop using a fake location, use the user's current location.
 <center>
@@ -163,8 +158,8 @@ As it has been explained along the readme file, this program has some programmer
 
 **Trams with an undetermined speed**: an hypothetical one is  assigned following a criteria based on the street type. 
 
-**Blocked trams**: an infinite weight edge is assigned. It exists the possibility that the shortest path between two points is the infinite one. In the real life we won't be able to go from a point to another one which have an infinite weight edge as a shortest path, this will mean that there's is no path matching this points. However, this situation wouldn't be solved properly by the program, the possibility of this situation is very rare, so we decided it is better to put an infinite weight in the edge than other possibility. \
+**Blocked trams**: an infinite weight edge is assigned. It exists the possibility that the shortest path between two points is the infinite one. In the real life we won't be able to go from a point to another one which have an infinite weight edge as a shortest path, this will mean that there's is no path matching this points. However, this situation wouldn't be solved properly by the program, the possibility of this situation is very rare, so we decided it is better to put an infinite weight in the edge than other possibility. 
 
-**Update the itime** of the trams with information every 5 minutes and keep the itime of the ones generated by convenience. The first time we built the graph is _slowly_, it has to download the graph, the highways, the congestions, calculate a generic itime for each edge and change the itime of the trams with information (around 25 seconds). Nevertheless, this graph will be the same for the following 5 minutes, so calculating the shortest path in this 5 minutes will be very quick (around 0.5 seconds). The next 5 minutes the itime of the trams with information has to be updated, but the trams without congestions' information will be the same all the time, so once calculated we don't have to calculated again. \
+**Update the itime** of the trams with information every 5 minutes and keep the itime of the ones generated by convenience. The first time we built the graph is _slowly_, it has to download the graph, the highways, the congestions, calculate a generic itime for each edge and change the itime of the trams with information (around 25 seconds). Nevertheless, this graph will be the same for the following 5 minutes, so calculating the shortest path in this 5 minutes will be very quick (around 0.5 seconds). The next 5 minutes the itime of the trams with information has to be updated, but the trams without congestions' information will be the same all the time, so once calculated we don't have to calculated again. 
 
 Love the limitations, and craziness, of this project..
